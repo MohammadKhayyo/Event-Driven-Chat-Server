@@ -89,5 +89,5 @@ Helping functions:
 4) int IsDigits(const char * num): check if the string has only numbers
 
 compiling steps:
-compile: gcc chatServer.c -o chatServer
-run: ./chatServer <port>
+compile: gcc -Wall -Wextra -Wvla -std=c99 chatServer.c -o chatServer
+run: valgrind --track-origins=yes -s --leak-check=full --show-leak-kinds=all --show-leak-kinds=indirect,reachable ./chatServer <port>
